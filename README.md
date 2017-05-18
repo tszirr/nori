@@ -1,16 +1,5 @@
 [![CS440 Banner](https://rgl.s3.eu-central-1.amazonaws.com/media/uploads/wjakob/2017/02/16/cs440-logo_web.jpg)](https://rgl.s3.eu-central-1.amazonaws.com/media/uploads/wjakob/2017/02/20/cs440-rgl.jpg)
 
-## Nori Version 2
+## Inofficial Nori Version 2, including some backports from v1
 
-Nori is a simple ray tracer written in C++. It runs on Windows, Linux, and
-Mac OS and provides basic functionality that is required to complete the
-assignments in the course Advanced Computer Graphics taught at EPFL.
-
-### Course information and framework documentation
-
-For access to course information including slides and reading material, visit the main [Advanced Computer Graphics website](https://rgl.epfl.ch/courses/ACG17). The Nori 2 framework and coding assignments will be described on the [Nori website](https://wjakob.github.io/nori).
-
-### Note to researchers and students from other institutions
-
-Last year's version of Nori including a full set of assignment descriptions can
-be found in the following [archive](https://github.com/wjakob/nori-old).
+This is an inofficial fork of ["Nori: An educational ray tracer"](https://github.com/wjakob/nori) that includes backports from [version 1](https://github.com/wjakob/nori-old), to remove some of the startup overhead of implementing basic primitives such as ray tracing. While this allows programmings assignments to put more focus on higher-level light transport algorithms, we still encourage you to replace the given default implementations with your own toy implementations in order to advance your own practical skills.
