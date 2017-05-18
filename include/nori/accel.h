@@ -19,6 +19,7 @@
 #pragma once
 
 #include <nori/mesh.h>
+#include <vector>
 
 NORI_NAMESPACE_BEGIN
 
@@ -30,6 +31,9 @@ NORI_NAMESPACE_BEGIN
  */
 class Accel {
 public:
+	Accel();
+	~Accel();
+
     /**
      * \brief Register a triangle mesh for inclusion in the acceleration
      * data structure
@@ -66,7 +70,13 @@ public:
     bool rayIntersect(const Ray3f &ray, Intersection &its, bool shadowRay) const;
 
 private:
-    Mesh         *m_mesh = nullptr; ///< Mesh (only a single one for now)
+    struct Internals;
+    std::vector<Mesh *> m_meshes;       ///< List of meshes registered with the BVH
+    std::vector<uint32_t> m_meshOffset; ///< Index of the first triangle for each shape
+    struct BVHNode;
+    std::vector<BVHNode> m_nodes;       ///< BVH nodes
+    std::vector<uint32_t> m_indices;    ///< Index references by BVH nodes
+
     BoundingBox3f m_bbox;           ///< Bounding box of the entire scene
 };
 
